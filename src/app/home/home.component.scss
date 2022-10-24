@@ -1,0 +1,66 @@
+.search-results {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 25%;
+}
+
+.results__spinner {
+    position: absolute;
+    top: -19px;
+    left: 10px;
+    padding: 2px;
+    background-color: #081c22;
+    border-radius: 50%;
+    & p {
+      position: absolute;
+      color: white;
+      top: -2px;
+      left: 10px;
+      font-weight: 500;
+      &:last-child {
+        left: 26px;
+        font-size: 0.5em;
+        top: 6px;
+      }
+    }
+  }
+
+.mat-card {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: 1px solid #e3e3e3;
+  border-radius: var(--imageBorderRadius);
+  overflow: hidden;
+  margin-top: 30px;
+  width: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+  max-width: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns));
+
+  & .mat-card-image {
+    width: 100%;
+    margin: 0;
+    height: calc((100vw - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
+    max-height: calc((var(--maxPrimaryPageWidth) - 80px - 260px - (var(--discoverColumnPadding) * var(--numberOfDiscoverColumns))) / var(--numberOfDiscoverColumns) * 1.5);
+  }
+
+  & .mat-card-content {
+    width: 100%;
+    padding: 26px 10px 12px 10px;
+    position: relative;
+    white-space: normal;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    & > p {
+      font-size: 1em;
+      margin: 0;
+      padding: 0;
+      color: rgba(0,0,0,0.6);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="results">
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
+    <mat-card *ngFor="let movie of moviePagination?.results">
+      <img matCardImage [src]="getImage(movie?.backdrop_path ?? '')">
+      <mat-card-content>
+        <div class="results__spinner">
+          <mat-progress-spinner [mode]="'determinate'" [diameter]="34" [value]="movie?.score">
+          </mat-progress-spinner>
+          <p>{{movie?.score}}</p>
+          <p>%</p>
+        </div>
+        <h2>{{movie?.title}}</h2>
+        <p>{{movie?.release_date | date:'d MMM y'}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
